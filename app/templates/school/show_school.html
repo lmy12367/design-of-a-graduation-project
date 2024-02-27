@@ -1,0 +1,37 @@
+﻿{% extends 'index.html' %}
+
+{% block page_content %}
+<style>
+    .bg-color {
+    }
+</style>
+
+<div class="col-xs-12">
+    <div class="panel panel-info">
+        <div class="panel-body">
+            <form class="tr_filter">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center col-sm-1">{{ _("教学楼") }}</th>
+                            <th class="text-center" colspan="10">{{ _("班级") }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vendor in teach_builds %}
+                        <tr class="text-center">
+                            <td class="">{{ vendor.name }}</td>
+                            {% for cls in vendor.to_class.all() %}
+                            <td class="username col-sm-1 {% if cls.name in cls_list %}bg-color text-danger {% endif %}">{{ cls.name }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

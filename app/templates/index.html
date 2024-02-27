@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block Title %}智能教室监测系统{% endblock %}
+{% block navbar_icon %}<i class="icon-leaf"></i>{% endblock %}
+{% block navbar_title %}智能教室监测系统{% endblock %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li>
+        <i class="icon-home home-icon"></i>
+        <a href="javascript:;">Home</a>
+    </li>
+</ul><!-- .breadcrumb -->
+{% endblock %}
+
+{% block navbar_header %}
+{% endblock %}
+
+{% block nav_list %}
+    <ul class="nav nav-list">
+        <li>
+            <a href="javascript:;" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text"> 教学楼管理 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="{{blue_url_for('add_school')}}">
+                        <i class="icon-double-angle-right"></i>
+                        更新数据
+                    </a>
+                </li>
+                <li>
+                    <a href="{{blue_url_for('show_school')}}">
+                        <i class="icon-double-angle-right"></i>
+                        展示教学楼信息
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text"> 课程管理 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="{{blue_url_for('add_tclass')}}">
+                        <i class="icon-double-angle-right"></i>
+                        更新数据
+                    </a>
+                </li>
+                <li>
+                    <a href="{{blue_url_for('show_class')}}">
+                        <i class="icon-double-angle-right"></i>
+                        展示课程信息
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text"> 具体课程管理 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="{{blue_url_for('upload_classdetails')}}">
+                        <i class="icon-double-angle-right"></i>
+                        更新数据
+                    </a>
+                </li>
+                <li>
+                    <a href="{{blue_url_for('show_classdetails')}}">
+                        <i class="icon-double-angle-right"></i>
+                        展示具体课程信息
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text"> 学生信息管理 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="{{blue_url_for('upload_user')}}">
+                        <i class="icon-double-angle-right"></i>
+                        上传学生信息
+                    </a>
+                </li>
+                <li>
+                    <a href="{{blue_url_for('show_student')}}">
+                        <i class="icon-double-angle-right"></i>
+                        展示所有学生信息
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{blue_url_for('home')}}">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text"> 文件管理 </span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $.each($(".form-group"),function (index,form_group) {
+        var input_id = $(form_group).find("input").attr("id");
+        var label_for = $(form_group).find("label").attr("for");
+        if (label_for === undefined && input_id !== undefined) {
+            $(form_group).find("label").attr("for",input_id);
+        }
+    });
+</script>
+{% endblock %}

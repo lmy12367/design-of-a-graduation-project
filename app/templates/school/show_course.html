@@ -1,0 +1,42 @@
+﻿{% extends 'index.html' %}
+
+{% block page_content %}
+<div class="col-xs-12">
+    <div class="panel panel-info">
+        <div class="panel-body">
+            <form class="tr_filter">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center col-sm-1">{{ _("序号") }}</th>
+                            <th class="text-center col-sm-1">{{ _("学院") }}</th>
+                            <th class="text-center">{{ _("专业") }}</th>
+                            <th class="text-center">{{ _("课程名称") }}</th>
+                            <th class="text-center">{{ _("主讲老师") }}</th>
+                            <th class="text-center">{{ _("学生人数") }}</th>
+                            <th class="text-center">{{ _("教学楼") }}</th>
+                            <th class="text-center">{{ _("教室") }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vendor in course_details %}
+                        <tr class="text-center">
+                            <td class="">{{ loop.index }}</td>
+                            <td class="">{{ vendor.to_collage.name }}</td>
+                            <td class="">{{ vendor.to_specialize.name }}</td>
+                            <td class="">{{ vendor.to_classes.name }}</td>
+                            <td class="">{{ vendor.to_teacher.name }}</td>
+                            <td class="">{{ vendor.count }}</td>
+                            <td class="">{{ vendor.build_id }}</td>
+                            <td class="">{{ vendor.tclass_id }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

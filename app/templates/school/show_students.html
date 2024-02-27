@@ -1,0 +1,36 @@
+﻿{% extends 'index.html' %}
+
+{% block page_content %}
+<div class="col-xs-12">
+    <div class="panel panel-info">
+        <div class="panel-body">
+            <form class="tr_filter">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center col-sm-1">{{ _("序号") }}</th>
+                            <th class="text-center col-sm-1">{{ _("图片") }}</th>
+                            <th class="text-center">{{ _("姓名") }}</th>
+                            <th class="text-center">{{ _("学号") }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vendor in students %}
+                        <tr class="text-center">
+                            <td class="">{{ loop.index }}</td>
+                            <td class="">
+                                <img src="{{ vendor.get_pic }}" style="width:85%;">
+                            </td>
+                            <td class="">{{ vendor.name }}</td>
+                            <td class="">{{ vendor.number }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

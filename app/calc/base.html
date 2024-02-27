@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+
+    <link rel="stylesheet" href="/static/css/notiflix-1.3.0.min.css">
+    <script src="/static/js/notiflix-1.3.0.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /*background: url(/static/imgs/sky.jpg);*/
+        }
+        .headers {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 5px solid;
+            border-bottom: 5px solid;
+        }
+        .headers a {
+            text-decoration: none;
+        }
+        .headers .l_search form {
+        }
+        .headers .l_search input {
+            background: url(/static/imgs/search.png);
+            height: 45px;
+            width: 181px;
+            font-size: 20px;
+            font-weight: 900;
+            color: black;
+            padding-left: 32px;
+            border: 0;
+            outline:none;
+        }
+        .search_empty {
+            background: url(/static/imgs/search_empty.png) !important;
+        }
+        .headers .right_methods {
+            width: 20%;
+        }
+        .headers .right_methods>a {
+            margin-right: 5%;
+        }
+        a {
+            text-decoration: none;
+        }
+        .lc {
+            width: 100px;
+            position: relative;
+        }
+        .content_lists {
+            width: 100%;
+        }
+        .rc {
+            width: 15%;
+            position: relative;
+        }
+        .contents {
+            display: flex;
+        }
+        .c_list {
+            margin: 15px 5% 0 5%;
+            border: 5px solid;
+            padding: 2% 2% 1% 2%;
+        }
+        .c_content {
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+        }
+        .c_footer {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: right;
+        }
+        .l_c_header {
+            font-size: 25px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 25px;
+        }
+        .r_c_header {
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+        }
+
+        .page {
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        .page a {
+            border: 1px solid;
+            border-radius: 26px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .c_list hr {
+            font-weight: bold;
+            height: 2px;
+            color: black;
+            background-color: black;
+            margin: 0 -2%;
+        }
+        .c_list hr:last-child {
+            display: none;
+        }
+        .c_list .reply {
+            margin-bottom: 2%;
+        }
+        .reply_b {
+            position: relative;
+        }
+        .reply_b img {
+            position: absolute;
+            top: 36px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .opposed span {
+            border: 2px solid;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 15px;
+            background-color: aqua;
+        }
+        .equivalent span {
+            border: 2px solid;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 15px;
+            background-color: cornsilk;
+        }
+        .reply .claim_to {
+            font-size: 12px;
+            border: 1px solid;
+            padding: 2px 4px;
+            border-radius: 11px;
+            background-color: darkgray;
+        }
+        .reply .reply_to {
+            font-size: 12px;
+            border: 1px solid;
+            padding: 2px 4px;
+            border-radius: 11px;
+            background-color: antiquewhite;
+        }
+    </style>
+
+    <script src="/static/js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div class="contents">
+        <div class="content_lists">
+            {% block contents %}
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>

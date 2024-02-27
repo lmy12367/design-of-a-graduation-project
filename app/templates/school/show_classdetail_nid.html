@@ -1,0 +1,54 @@
+﻿{% extends 'index.html' %}
+
+{% block page_content %}
+<div class="col-xs-12">
+    <div class="panel panel-info">
+        <div class="panel-body text-center">
+            <video src="{{ vendor.get_video }}" style="width:65%;" controls></video>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center col-sm-1">{{ _("课程名") }}</th>
+                            <th class="text-center">{{ _("日期") }}</th>
+                            <th class="text-center">{{ _("主讲老师") }}</th>
+                            <th class="text-center">{{ _("电话") }}</th>
+                            <th class="text-center">{{ _("学院") }}</th>
+                            <th class="text-center">{{ _("应到课堂人数") }}</th>
+                            <th class="text-center">{{ _("实际课堂人数") }}</th>
+                            <th class="text-center">{{ _("旷课人数") }}</th>
+                            <th class="text-center">{{ _("迟到人数") }}</th>
+                            <th class="text-center">{{ _("早退人数") }}</th>
+                            <th class="text-center">{{ _("实际到课姓名") }}</th>
+                            <th class="text-center">{{ _("旷课姓名") }}</th>
+                            <th class="text-center">{{ _("迟到姓名") }}</th>
+                            <th class="text-center">{{ _("早退姓名") }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td class="">{{ vendor.classes }}</td>
+                            <td class="">{{ vendor.ctime }}</td>
+                            <td class="">{{ vendor.teacher }}</td>
+                            <td class="">{{ vendor.phone }}</td>
+                            <td class="">{{ vendor.collage }}</td>
+
+                            <td class="">{{ vendor.need_count }}</td>
+                            <td class="">{{ vendor.now_count }}</td>
+                            <td class="">{{ vendor.no_count }}</td>
+                            <td class="">{{ vendor.later_count }}</td>
+                            <td class="">{{ vendor.mor_count }}</td>
+
+                            <td class="">{{ vendor.stu_names01 }}</td>
+                            <td class="">{{ vendor.stu_names02 }}</td>
+                            <td class="">{{ vendor.stu_names03 }}</td>
+                            <td class="">{{ vendor.stu_names04 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
